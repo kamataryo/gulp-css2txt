@@ -1,6 +1,6 @@
 {
   "name": "gulp-css2txt",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "gulp-css2txt is a gulp plugin to extract possible characters from css which may be appear in browser.",
   "main": "lib/gulp-css2txt.js",
   "files": [
@@ -30,5 +30,19 @@
     "mocha": "^3.2.0",
     "stream-assert": "^2.0.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamataRyo/gulp-css2txt.git"
+  },
+  "keywords": [
+    "gulp",
+    "css",
+    "font",
+    "minify"
+  ],
+  "bugs": {
+    "url": "https://github.com/KamataRyo/gulp-css2txt/issues"
+  },
+  "homepage": "https://github.com/KamataRyo/gulp-css2txt#readme"
 }
