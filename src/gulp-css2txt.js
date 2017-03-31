@@ -42,13 +42,14 @@ export default function() {
             .filter(x => x &&
                          x.property === 'content' &&
                          typeof x.value === 'string' &&
-                         x.value.length > 0
+                         x.value.length > 0 &&
+                         (
+                           (x.value[0] === '\'' && x.value[x.value.length - 1] === '\'') ||
+                           (x.value[0] === '"'  && x.value[x.value.length - 1] === '"' )
+                         )
                     ) // pick { content: <string> } up
             .map(x => x.value)
-            .map(x => (x[0] === '\'' && x[x.length - 1] === '\'') ||
-                      (x[0] === '"'  && x[x.length - 1] === '"' ) ?
-                        x.split('').splice(1, x.length - 2).join('') : x
-                ) // unwrap quotes
+            .map(x => x.split('').splice(1, x.length - 2).join('')) // unwrap quotes
             .map(x => x[0] === '\\' ?
                         String.fromCharCode(
                          parseInt('0x' + x.split('').splice(1, x.length - 1).join(''))

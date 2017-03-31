@@ -37,3 +37,28 @@ gulp.task('css2txt', () => {
     .pipe(gulp.dest('dist/'))
 })
 ```
+
+## I/O
+
+### input
+
+CSS is acceptable.
+
+```css
+.foo::before {
+  content: 'abc'
+}
+.bar::before {
+  content: 'def'
+}
+.baz::after {
+  content: "\47"; // G
+}
+```
+
+### output
+
+*style.txt*
+```
+abcdefG
+```
