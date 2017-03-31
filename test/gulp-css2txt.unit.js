@@ -1,6 +1,6 @@
-import assert from 'stream-assert'
-import gulp   from 'gulp'
-import expect from 'expect'
+import assert  from 'stream-assert'
+import gulp    from 'gulp'
+import expect  from 'expect'
 import css2txt from '../src/gulp-css2txt'
 
 describe('gulp-fontcss2txt', () => {
@@ -30,5 +30,4 @@ describe('gulp-fontcss2txt', () => {
         .on('error', () => done())
     })
   })
-
 })

@@ -7,13 +7,13 @@ import through    from 'through2'
  * plugin name
  * @type {String}
  */
-export const PLUGIN_NAME = 'gulp-css2txt'
+const PLUGIN_NAME = 'gulp-css2txt'
 
 /**
  * extract text contents from css
  * @return {Through} Gulp Plugin function
  */
-export default function() {
+const css2txt = function() {
 
   /**
    * Transform
@@ -84,4 +84,10 @@ export default function() {
   }
 
   return through.obj(transform, flush)
+}
+
+export default css2txt
+
+if (module) {
+  module.exports = css2txt
 }
