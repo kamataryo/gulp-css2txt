@@ -1,0 +1,34 @@
+{
+  "name": "gulp-css2txt",
+  "version": "0.1.0",
+  "description": "gulp-css2txt is a gulp plugin to extract possible characters from css which may be appear in browser.",
+  "main": "lib/gulp-fontsubset.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "NODE_ENV=production babel ./src --out-dir lib --source-maps inline",
+    "clean": "[ -d ./lib ] && rm -r ./lib || echo 'already clean!'",
+    "test": "mocha && npm run build"
+  },
+  "author": "kamataryo",
+  "dependencies": {
+    "css": "^2.2.1",
+    "gulp-util": "^3.0.8",
+    "replace-ext": "^1.0.0",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "eslint": "^3.18.0",
+    "eslint-plugin-import": "^2.2.0",
+    "expect": "^1.20.2",
+    "gulp": "^3.9.1",
+    "mocha": "^3.2.0",
+    "stream-assert": "^2.0.3"
+  },
+  "license": "MIT"
+}

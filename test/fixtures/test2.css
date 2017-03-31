@@ -1,0 +1,5 @@
+/*broken CSS*/
+
+a::before {
+  content: 'abc';
+  font-style: italic;

@@ -1,0 +1,4 @@
+a::before {
+  content: 'abc';
+  font-style: italic;
+}
