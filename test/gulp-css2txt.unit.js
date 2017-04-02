@@ -24,7 +24,7 @@ describe('gulp-fontcss2txt', () => {
         .pipe(assert.end(done))
     })
 
-    it.only('should extract escaped characters', done => {
+    it('should extract escaped characters', done => {
       gulp.src([__dirname + '/fixtures/test2.css'])
         .pipe(css2txt())
         .pipe(assert.length(1))
