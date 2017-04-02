@@ -1,5 +1,7 @@
-/*broken CSS*/
+li.li-hiragana {
+  list-style: hiragana outside;
+}
 
-a::before {
-  content: 'abc';
-  font-style: italic;
+li.li-katakana {
+  list-style-type: katakana;
+}

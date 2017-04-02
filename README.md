@@ -6,7 +6,7 @@ gulp-css2txt is a gulp plugin to extract possible characters from css which may 
 
 ## install
 
-```
+```shell
 $ npm install -D gulp-css2txt
 ```
 
@@ -14,7 +14,7 @@ $ npm install -D gulp-css2txt
 
 ### Static import
 
-```
+```javascript
 import gulp from 'gulp'
 import css2txt from 'gulp-css2txt'
 
@@ -27,7 +27,7 @@ gulp.task('css2txt', () => {
 
 ### CommonJS style
 
-```
+```javascript
 const gulp = require('gulp')
 const css2txt = require('gulp-css2txt')
 
@@ -36,6 +36,15 @@ gulp.task('css2txt', () => {
     .pipe(css2txt({ opts }))
     .pipe(gulp.dest('dist/'))
 })
+```
+
+## options and default
+
+```javascript
+{
+  'content'   : true,  // pick content property
+  'listStyle' : false  // pick list-style-type property
+}
 ```
 
 ## Overview of transformation
@@ -60,6 +69,6 @@ CSS is acceptable as input.
 
 Aggregated texts will be obtained.
 
-```
+```text
 abcdefG
 ```
