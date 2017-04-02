@@ -1,5 +1,9 @@
-/*broken CSS*/
-
-a::before {
-  content: 'abc';
-  font-style: italic;
+.foo::before {
+  content: 'abc'
+}
+.bar::before {
+  content: 'def'
+}
+.baz::after {
+  content: "\47"; /* G */
+}

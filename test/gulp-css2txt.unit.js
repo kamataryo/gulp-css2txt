@@ -24,8 +24,16 @@ describe('gulp-fontcss2txt', () => {
         .pipe(assert.end(done))
     })
 
-    it('should raise error with invalid css.', done => {
+    it.only('should extract escaped characters', done => {
       gulp.src([__dirname + '/fixtures/test2.css'])
+        .pipe(css2txt())
+        .pipe(assert.length(1))
+        .pipe(assert.first(file => expect(file.contents.toString()).toBe('abcdefG')))
+        .pipe(assert.end(done))
+    })
+
+    it('should raise error with invalid css.', done => {
+      gulp.src([__dirname + '/fixtures/test3.css'])
         .pipe(css2txt())
         .on('error', () => done())
     })

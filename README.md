@@ -38,11 +38,11 @@ gulp.task('css2txt', () => {
 })
 ```
 
-## I/O
+## Overview of transformation
 
 ### input
 
-CSS is acceptable.
+CSS is acceptable as input.
 
 ```css
 .foo::before {
@@ -52,13 +52,14 @@ CSS is acceptable.
   content: 'def'
 }
 .baz::after {
-  content: "\47"; // G
+  content: "\47"; /* G */
 }
 ```
 
 ### output
 
-*style.txt*
+Aggregated texts will be obtained.
+
 ```
 abcdefG
 ```
