@@ -1,6 +1,6 @@
 {
   "name": "gulp-css2txt",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "gulp-css2txt is a gulp plugin to extract possible characters from css which may be appear in browser.",
   "main": "lib/gulp-css2txt.js",
   "files": [
