@@ -38,8 +38,10 @@
   "keywords": [
     "gulp",
     "css",
+    "plane text",
     "font",
-    "minify"
+    "minify",
+    "subset"
   ],
   "bugs": {
     "url": "https://github.com/KamataRyo/gulp-css2txt/issues"

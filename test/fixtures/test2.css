@@ -5,5 +5,5 @@
   content: 'def'
 }
 .baz::after {
-  content: "\47"; /* G */
+  content: '\47'; /* G */
 }
