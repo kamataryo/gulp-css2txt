@@ -45,10 +45,28 @@ gulp.task('css2txt', () => {
 
 ```javascript
 {
-  'content'   : true,  // pick content property
-  'listStyle' : false  // pick list-style-type property
+  'content'       : true,  // pick content         property
+  'listStyle'     : false, // pick list-style      property
+  'listStyleType' : false, // pick list-style-type property
 }
 ```
+
+or simply in array.
+
+```javascript
+['content', 'listStyle', 'listStyleType'] // pick those 3 property
+```
+
+snake-case style are aliases.
+
+```javascript
+{
+  'list-style'      : true,
+  'list-style-type' : true,
+}
+```
+
+
 
 ## Overview of transformation
 

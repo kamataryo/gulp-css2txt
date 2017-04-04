@@ -3,6 +3,8 @@ import gutil      from 'gulp-util'
 import replaceExt from 'replace-ext'
 import through    from 'through2'
 
+import config from './config'
+import { regulate } from './lib'
 /**
  * plugin name
  * @type {String}
@@ -11,9 +13,13 @@ const PLUGIN_NAME = 'gulp-css2txt'
 
 /**
  * extract text contents from css
+ * @param  {Object} opts  option values
  * @return {Through} Gulp Plugin function
  */
-const css2txt = function() {
+const css2txt = function(opts) {
+
+  // regularize options
+  const options = regulate(opts)
 
   /**
    * Transform
@@ -35,6 +41,16 @@ const css2txt = function() {
       const result = file.clone()
 
       try {
+
+        const declatrations = css.parse(result.contents.toString()).stylesheet.rules
+          .map(x => x.declarations)
+          .reduce((prev, declarations) => prev.concat(declarations), []) // flatten
+          .map(declaration => {
+            const { property, value } = declaration
+
+          })
+
+
         result.contents = new Buffer(
           css.parse(result.contents.toString()).stylesheet.rules
             .map(x => x.declarations)
