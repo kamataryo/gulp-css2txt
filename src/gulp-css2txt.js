@@ -4,7 +4,7 @@ import replaceExt from 'replace-ext'
 import through    from 'through2'
 
 import config from './config'
-import { regulate } from './lib'
+import { normalize } from './lib'
 /**
  * plugin name
  * @type {String}
@@ -19,7 +19,7 @@ const PLUGIN_NAME = 'gulp-css2txt'
 const css2txt = function(opts) {
 
   // regularize options
-  const options = regulate(opts)
+  const options = normalize(opts)
 
   /**
    * Transform
@@ -45,10 +45,6 @@ const css2txt = function(opts) {
         const declatrations = css.parse(result.contents.toString()).stylesheet.rules
           .map(x => x.declarations)
           .reduce((prev, declarations) => prev.concat(declarations), []) // flatten
-          .map(declaration => {
-            const { property, value } = declaration
-
-          })
 
 
         result.contents = new Buffer(

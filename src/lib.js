@@ -2,20 +2,34 @@ import config from './config'
 
 const AVAIRABLE_OPTS = config.reduce((prev, def) => prev.concat(def.aliases), [])
 
-console.log('content' in AVAIRABLE_OPTS)
-
 /**
  * opts pramater regularization
  * @param  {Object|Array|string} opts un sanitized options
  * @return {Object}                   regular options
  */
-export const regulate = opts => Object.keys(opts)
-  .filter(key => {
-    console.log(key)
-    return !(key in AVAIRABLE_OPTS) // ????よくわからない
-  })
-  .reduce((prev, key) => {
-    console.log(key)
-    prev[key] = opts[key]
-    return prev
-  }, {})
+export const normalize = opts => {
+
+  if (!opts) {
+    return { content: true }
+  }
+
+  if (Array.isArray(opts)) {
+    return opts.reduce((prev, key) => {
+      prev[key] = true
+      return prev
+    }, {})
+  }
+
+  const result = Object.keys(opts)
+    .filter(key => AVAIRABLE_OPTS.includes(key))
+    .reduce((prev, key) => {
+      prev[key] = opts[key]
+      return prev
+    }, {})
+
+  if (!result.hasOwnProperty('content')) {
+    result.content = true
+  }
+
+  return result
+}
